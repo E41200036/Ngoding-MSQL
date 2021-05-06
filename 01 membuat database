@@ -1,0 +1,40 @@
+# 01 MEMBUAT DATABASE
+untuk membuat sebuah database, kamu bisa menggunakan perintah 
+CREATE DATABASE nama_database;
+
+* contoh
+MariaDB [(none)]> CREATE DATABASE mahasiswa;
+Query OK, 1 row affected (0.00 sec)
+
+# 02 MELIHAT DAFTAR DATABASE
+gunakan perintah
+SHOW DATABASES;
+
+* contoh
+MariaDB [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mahasiswa          | *database yang baru saja dibuat
+| mysql              |
+| performance_schema |
+    | phpmyadmin         |
++--------------------+
+5 rows in set (0.001 sec)
+
+# 03 MENGGUNAKAN DATABASE
+sebelum kita bisa menggunakan database, kita harus memilih databasenya terlebih dahulu
+USE nama_database
+
+* contoh
+MariaDB [(none)]> use mahasiswa
+Database changed
+
+# 04 MENGHAPUS DATABASE
+untuk menghapus database yang ada, gunakan perintah ini : 
+DROP DATABASE mahasiswa;
+ 
+* contoh
+MariaDB [(none)]> DROP DATABASE mahasiswa;
+Query OK, 0 rows affected (0.01 sec)

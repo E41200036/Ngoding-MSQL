@@ -1,0 +1,60 @@
+# 01 MEMBUAT TABLE
+untuk membuat tabel :
+1. login : mysql -u username -p
+won@DESKTOP-G23MUL9 c:\xampp
+# mysql -u ibnu -p
+Enter password: **********
+
+2. menggunakan database : use nama_database
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mahasiswa          |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
++--------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [(none)]> use mahasiswa;
+Database changed
+
+3. membuat table : CREATE TABLE nama_tabel (daftar_kolom) [type=tipe_tabel]
+MariaDB [mahasiswa]> create table data_mahasiswa (nim varchar(8), nama varchar(50), prodi varchar(3));
+Query OK, 0 rows affected (0.352 sec)
+
+MariaDB [mahasiswa]> show tables;
++---------------------+
+| Tables_in_mahasiswa |
++---------------------+
+| data_mahasiswa      |
++---------------------+
+1 row in set (0.001 sec)
+
+# 02 MELIHAT RINCIAN TABLE
+untuk melihat rincian tabel yang telah dibuat seperti : nama kolom , tipe data
+gunakan perintah : DESCRIBE nama_tabel;
+
+* contoh
+MariaDB [mahasiswa]> describe data_mahasiswa;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| nim   | varchar(8)  | YES  |     | NULL    |       |
+| nama  | varchar(50) | YES  |     | NULL    |       |
+| prodi | varchar(3)  | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.050 sec)
+
+# 03 MENGHAPUS TABEL
+ketika tabel sudah tidak digunakan, kamu bisa menghapusnya dengan perintah :
+DROP TABLE data_mahasiswa;
+
+* contoh
+MariaDB [mahasiswa]> drop table data_mahasiswa;
+Query OK, 0 rows affected (0.381 sec)
+
+MariaDB [mahasiswa]> show tables;
+Empty set (0.001 sec)
